@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Monitoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #video {
+            width: 100%;
+            margin-top: 20px;
+            background-color: black;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Driver Monitoring System</h1>
+            <p>Real-time driver monitoring to ensure safety.</p>
+        </div>
+        <div class="info">
+            <h3>Current Time: {{ current_time }}</h3>
+            <h3>Last Detected Sleepy Time: {{ sleeping_time }}</h3>
+            <p class="warning">If you see this message, you have been detected as sleepy!</p>
+            <button onclick="startDetection()">Start Driver Monitoring</button>
+        </div>
+        <div id="video">
+            <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+        </div>
+    </div>
+
+    <script>
+        function startDetection() {
+            alert("Driver Monitoring Started!");
+            // You can also trigger any backend logic here using Ajax if needed
+        }
+    </script>
+</body>
+</html>
